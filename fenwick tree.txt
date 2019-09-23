@@ -1,0 +1,29 @@
+public class BIT {
+    int size;
+    int[] table;
+    public BIT(int size) {
+        table = new int[size];
+        this.size = size;
+    }
+    //update the position i by delta
+    void update(int i, int delta) {
+        while(i<size) {
+            table[i] += delta;
+            i+=Integer.lowestOneBit(i);
+        }
+    }
+    //compute the prefix sum value 1..i
+    int sum(int i) {
+        int sum=0;
+        while(i>0) {
+            sum+=table[i];
+            i-=Integer.lowestOneBit(i);
+            //i -= i&-i;
+        }
+        return sum;
+    }
+    //compute the sum value i..j
+    int rangeSum(int i, int j) {
+        return sum(j) - sum(i-1);
+    }
+}

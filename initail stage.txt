@@ -1,0 +1,5 @@
+	FastReader sc = new FastReader();
+	int t = sc.nextInt();
+	while(t-->0)	{
+
+	}
