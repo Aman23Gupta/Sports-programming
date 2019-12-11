@@ -1,56 +1,45 @@
-static class FastReader 
-    { 
-        BufferedReader br; 
-        StringTokenizer st; 
-  
-        public FastReader() 
-        { 
-            br = new BufferedReader(new
-                     InputStreamReader(System.in)); 
-        } 
-  
-        String next() 
-        { 
-            while (st == null || !st.hasMoreElements()) 
-            { 
-                try
-                { 
-                    st = new StringTokenizer(br.readLine()); 
-                } 
-                catch (IOException  e) 
-                { 
-                    e.printStackTrace(); 
-                } 
-            } 
-            return st.nextToken(); 
-        } 
-  
-        int nextInt() 
-        { 
-            return Integer.parseInt(next()); 
-        } 
-  
-        long nextLong() 
-        { 
-            return Long.parseLong(next()); 
-        } 
-  
-        double nextDouble() 
-        { 
-            return Double.parseDouble(next()); 
-        } 
-  
-        String nextLine() 
-        { 
-            String str = ""; 
-            try
-            { 
-                str = br.readLine(); 
-            } 
-            catch (IOException e) 
-            { 
-                e.printStackTrace(); 
-            } 
-            return str; 
-        } 
-    } 
+//for input
+Scanner sc = new Scanner(System.in);
+//throws IOException in main
+static class Scanner {
+        StringTokenizer st;
+        BufferedReader br;
+
+        public Scanner(InputStream s) {
+            br = new BufferedReader(new InputStreamReader(s));
+        }
+
+        public Scanner(FileReader fileReader) {
+            br = new BufferedReader(fileReader);
+        }
+
+        public String next() throws IOException {
+            while (st == null || !st.hasMoreTokens())
+                st = new StringTokenizer(br.readLine());
+            return st.nextToken();
+        }
+
+        public int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        public long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
+
+        public String nextLine() throws IOException {
+            return br.readLine();
+        }
+
+        public boolean ready() throws IOException {
+            return br.ready();
+        }
+    }
+    
+// for output
+PrintWriter out = new PrintWriter(System.out);
+//store the data but not print
+out.println();
+//this two are must
+out.flush();
+out.close();
