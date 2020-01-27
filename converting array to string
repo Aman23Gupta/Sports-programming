@@ -1,0 +1,7 @@
+public static String convertArrayToStringMethod(int[] strArray) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < strArray.length; i++) {
+            stringBuilder.append(strArray[i]);
+        }
+        return stringBuilder.toString();
+    }
