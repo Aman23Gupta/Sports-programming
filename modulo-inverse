@@ -3,9 +3,9 @@
         long res = 1;
         while(x > 0) {
             if( x % 2 != 0) {
-                res = (res * a) % p;
+                res = (res%p * a%p) % p;
             }
-            a = (a * a) % p;
+            a = (a%p * a%p) % p;
             x /= 2;
         }
         return res;
