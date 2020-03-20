@@ -4,17 +4,18 @@ import java.util.*;
 //solution classes here
 
 public class Code {
-    
+
     //main solution here
-    
+
+    static Scanner sc = new Scanner(System.in);
+    static PrintWriter out = new PrintWriter(System.out);
+
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
         
         out.flush();
         out.close();
     }
-    
+
     //solution functions here
 
     /*
