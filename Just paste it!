@@ -9,6 +9,13 @@ public class Code {
 
     static Scanner sc = new Scanner(System.in);
     static PrintWriter out = new PrintWriter(System.out);
+    static long mod = (long)1e9+7;
+    static long MOD = 998244353;
+    static ArrayList<Integer> list[] = new ArrayList[(int)1e4+1];
+    //static int color[] = new int[(int)2e6+1];
+    //static int visit[] = new int[(int)1e4+1];
+    //static int level[] = new int[(int)1e4+1];
+    //static Deque<Integer> q = new ArrayDeque<>();
 
     public static void main(String[] args) throws IOException {
         
@@ -18,19 +25,40 @@ public class Code {
 
     //solution functions here
 
-    /*
-     * ******************************************************************************************************************************
-     * ******************************************************************************************************************************
-     * ******************************************************************************************************************************
-     * #########  #######  ######   ########  ##  ###   ##  ##    ##   #######  ##    ##   #######  ##   ##  #######   ########
-     * ##    ###  ##       ##       ########  ##  ## #  ##   ##  ##    ##       ##    ##   ##       ##  ##   ##        ##    ##
-     * ##    ###  #######  ######      ##     ##  ##  # ##     ##      #######  ##    ##   ##       ####     #######   ########
-     * ##    ###  ##           ##      ##     ##  ##   ###     ##      ##       ##    ##   ##       ##  ##   ##        ##   ##
-     * #########  #######  ######      ##     ##  ##    ##     ##      ##       ########   #######  ##   ##  #######   ##     ##
-     *******************************************************************************************************************************
-     *******************************************************************************************************************************
-     *******************************************************************************************************************************
-     */
+    //---templates---
+    public static int low_bound(long[] array, long value) {
+        int len = array.length;
+        int lo = 0;
+        int hi = len-1;
+        int ans = -1;
+        while(lo<=hi) {
+            int mid = lo+(hi-lo)/2;
+            if(array[mid]<=value) {
+                lo=mid+1;
+                ans=mid;
+            }
+            else
+                hi=mid-1;
+        }
+        return ans;
+    }
+
+    public static int up_bound(long[] array, long value) {
+        int len = array.length;
+        int lo = 0;
+        int hi = len-1;
+        int ans = -1;
+        while(lo<=hi) {
+            int mid = lo+(hi-lo)/2;
+            if(array[mid]>=value) {
+                hi=mid-1;
+                ans=mid;
+            }
+            else
+                lo=mid+1;
+        }
+        return ans;
+    }
 
     static class Scanner {
         StringTokenizer st;
