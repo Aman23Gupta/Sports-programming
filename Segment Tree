@@ -3,7 +3,7 @@
 struct segTree
 {
     int size;
-    vl table;
+    vll table;
     void init(int n)
     {
         size = 1;
@@ -12,7 +12,7 @@ struct segTree
         table.assign(2 * size, INF);
     }
  
-    void build(vi &a, int x, int lx, int rx)
+    void build(vll &a, int x, int lx, int rx)
     {
         if (rx - lx == 1)
         {
@@ -28,7 +28,7 @@ struct segTree
         table[x] = min(table[2 * x + 1],table[2 * x + 2]);
     }
  
-    void build(vi &a)
+    void build(vll &a)
     {
         build(a, 0, 0, size);
     }
